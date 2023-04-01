@@ -7,14 +7,14 @@ from flask import Flask, request
 import os
 
 
-token = '5834072852:AAExuvtIwXrzKnjeb_dfs9WUVXgoS1mKkz4'
-provider_token = '350862534:LIVE:Y2IzYzM1YzU1ZDNj'
-DB_URI = "postgres://tfikypeo:TC-vm7GF-CIL5ZoLZ06mAzJE3rfSFqqj@mouse.db.elephantsql.com/tfikypeo"
+token = ''
+provider_token = ''
+DB_URI = ""
 db_connection = psycopg2.connect(DB_URI, sslmode="require")
 db_object = db_connection.cursor()
-teachers = [843373640]
+teachers = []
 
-url = f'https://domaska-bot.herokuapp.com/{token}'
+url = f''
 bot = telebot.TeleBot(token, threaded=False)
 
 
