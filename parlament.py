@@ -6,14 +6,14 @@ import os
 import random
 
 #
-admin_chat_id = [843373640, 76683384, 1747614551, 732337421]
+admin_chat_id = [...]
 
-DB_URI = "postgres://thstmare:zIduxHeDd2nvkzBd5slGF6MwPz8tTAce@mouse.db.elephantsql.com/thstmare"
+DB_URI = "..."
 db_connection = psycopg2.connect(DB_URI, sslmode="require")
 db_object = db_connection.cursor()
 
-API_TOKEN = '5868782166:AAGWhXR2NLw13p1K0tE8Yln3cmZ3ieRivS4'
-WEBHOOK_HOST = 'https://victoria-school-app.herokuapp.com/'
+API_TOKEN = '...'
+WEBHOOK_HOST = '...'
 
 
 dp = Bot(API_TOKEN)
@@ -40,7 +40,7 @@ async def menu(message: types.Message):
     await message.answer("Izvēlieties vienu no manām komandām🤖", reply_markup=markup, parse_mode='html')
 
 
-@bot.message_handler(chat_id=[843373640, 76683384, 1747614551, 732337421], commands=['admin'])
+@bot.message_handler(chat_id=[...], commands=['admin'])
 async def admin(message: types.Message):
     await message.answer("1./visiem - rakstīt ziņu visiem\n2. /users - lietotāju skaits\n3. /answer - atbildēt\n4. /sms - visi sms")
 
@@ -50,7 +50,7 @@ async def admin(message: types.Message):
     await message.answer("You cannot use this")
 
 
-@bot.message_handler(chat_id=[843373640, 76683384, 1747614551, 732337421], commands=['visiem'])
+@bot.message_handler(chat_id=[...], commands=['visiem'])
 async def gossip(message: types.Message):
     global status
     status = 666
@@ -62,7 +62,7 @@ async def gossip(message: types.Message):
     await message.answer("You cannot use this")
 
 
-@bot.message_handler(chat_id=[843373640, 76683384, 1747614551, 732337421], commands=['sms'])
+@bot.message_handler(chat_id=[...], commands=['sms'])
 async def sms(message: types.Message):
     db_object.execute(f"SELECT message_id, username, body FROM sms3")
     result = db_object.fetchall()
@@ -75,7 +75,7 @@ async def sms(message: types.Message):
     await message.answer("You cannot use this")
 
 
-@bot.message_handler(chat_id=[843373640, 76683384, 1747614551, 732337421], commands=['answer'])
+@bot.message_handler(chat_id=[...], commands=['answer'])
 async def answer(message: types.Message):
     global status
     status = 555
@@ -93,7 +93,7 @@ async def answer(message: types.Message):
     await message.answer("You cannot use this")
 
 
-@bot.message_handler(chat_id=[843373640, 76683384, 1747614551, 732337421], commands=['users'])
+@bot.message_handler(chat_id=[...], commands=['users'])
 async def users(message: types.Message):
     db_object.execute(f"SELECT * FROM users ")
     result = db_object.fetchall()
