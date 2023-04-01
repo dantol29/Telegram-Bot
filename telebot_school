@@ -2,10 +2,10 @@ import telebot
 from telebot import types
 import psycopg2
 #
-bot = telebot.TeleBot('5827972760:AAEKsxFXWT_vgGHaN7hNAlq4jJK3rcvStsA')
-admin_chat_id = [843373640, 1163481388]
+bot = telebot.TeleBot('')
+admin_chat_id = []
 
-DB_URI = "postgres://rgmhudfi:AHIDueNpLi0hReCpkMDGuR474FZzQ3ac@mouse.db.elephantsql.com/rgmhudfi"
+DB_URI = ""
 db_connection = psycopg2.connect(DB_URI, sslmode="require")
 db_object = db_connection.cursor()
 
