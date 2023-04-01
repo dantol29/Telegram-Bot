@@ -1,3 +1,3 @@
 # Telegram-Bot
 
-parlament.py - async, webhook
+parlament.py - Telegram bot for Secondary School 'Victoria'.(async, webhook, aiogram)
